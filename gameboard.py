@@ -17,9 +17,9 @@ class Gameboard:
         self.pos_keeper_y = 13
         self.pos_keeper_x = 14
 
-    def display(self, gameboard):
+    def display(self):
         """Fonction qui affiche le gameboard"""
-        for liste in gameboard:
+        for liste in self.gameboard:
             for element in liste:
                 print(element, end = "")
             print("")
