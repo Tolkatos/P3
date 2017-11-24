@@ -6,12 +6,10 @@ class Item:
             self.pos_y = random.randint(0, 13)
             self.pos_x = 0
 
-	def random_position(self, position, y):
+	def random_position(self, position):
             i = 0
             while i == 0:
                 x = random.randint(0, 13)
-                if position[y][x] == 0:
+                if position[self.pos_y][x] == 0:
                     i += 1
             return x
-
-
