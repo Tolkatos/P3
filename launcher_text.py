@@ -21,7 +21,7 @@ class TextApplication:
 
     def run(self):
         self.level.display()
-        #Nouvelle boucle pour relancer le jeu sur demande de l'utilisateur
+        #Nouvelle boucle pour relancer le jeu sur demande de l'utilisateu
         while self.character.check_item(self.level, self.keeper):
             print("\n")
             move = input("Déplacement : z (haut), s (bas), q (gauche), d (droite) \n")

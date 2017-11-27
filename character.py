@@ -11,36 +11,48 @@ class Character:
             if level.gameboard[self.pos_y - 1][self.pos_x] != 1:
                 if level.gameboard[self.pos_y - 1][self.pos_x] == "I":
                     self.nbr_item += 1
-                level.gameboard[self.pos_y][self.pos_x] = 0
-                self.pos_y -= 1
-                level.gameboard[self.pos_y][self.pos_x] = "M"
+                if self.pos_y - 1 >= 0:
+                    level.gameboard[self.pos_y][self.pos_x] = 0
+                    self.pos_y -= 1
+                    level.gameboard[self.pos_y][self.pos_x] = "M"
+                else:
+                    print("Mouvement impossible")
             else:
                 print("Mouvement impossible")
         if move_input == "s":
             if level.gameboard[self.pos_y + 1][self.pos_x] != 1:
-                if level.gameboard[self.pos_y + 1][self.pos_x] == "I":
-                    self.nbr_item += 1
-                level.gameboard[self.pos_y][self.pos_x] = 0
-                self.pos_y += 1
-                level.gameboard[self.pos_y][self.pos_x] = "M"
+                if (self.pos_y + 1) < 13:
+                    if level.gameboard[self.pos_y + 1][self.pos_x] == "I":
+                        self.nbr_item += 1
+                    level.gameboard[self.pos_y][self.pos_x] = 0
+                    self.pos_y += 1
+                    level.gameboard[self.pos_y][self.pos_x] = "M"
+                else:
+                    print("Mouvement impossible")
             else:
                 print("Mouvement impossible")
         if move_input == "q":
             if level.gameboard[self.pos_y][self.pos_x - 1] != 1:
-                if level.gameboard[self.pos_y][self.pos_x - 1] == "I":
-                    self.nbr_item += 1
-                level.gameboard[self.pos_y][self.pos_x] = 0
-                self.pos_x -= 1
-                level.gameboard[self.pos_y][self.pos_x] = "M"
+                if self.pos_x -1 >= 0:
+                    if level.gameboard[self.pos_y][self.pos_x - 1] == "I":
+                        self.nbr_item += 1
+                    level.gameboard[self.pos_y][self.pos_x] = 0
+                    self.pos_x -= 1
+                    level.gameboard[self.pos_y][self.pos_x] = "M"
+                else:
+                    print("Mouvement impossible")
             else:
                 print("Mouvement impossible")
         if move_input == "d":
             if level.gameboard[self.pos_y][self.pos_x + 1] != 1:
-                if level.gameboard[self.pos_y][self.pos_x + 1] == "I":
-                    self.nbr_item += 1
-                level.gameboard[self.pos_y][self.pos_x] = 0
-                self.pos_x += 1
-                level.gameboard[self.pos_y][self.pos_x] = "M"
+                if self.pos_x + 1 <= 13:
+                    if level.gameboard[self.pos_y][self.pos_x + 1] == "I":
+                        self.nbr_item += 1
+                    level.gameboard[self.pos_y][self.pos_x] = 0
+                    self.pos_x += 1
+                    level.gameboard[self.pos_y][self.pos_x] = "M"
+                else:
+                    print("Mouvement impossible")
             else:
                 print("Mouvement impossible")
 
