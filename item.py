@@ -3,7 +3,7 @@ import random
 class Item:
 
 	def __init__(self):
-            self.pos_y = random.randint(0, 13)
+            self.pos_y = random.randint(0, 14)
             self.pos_x = 0
 
 	def random_position(self, position):

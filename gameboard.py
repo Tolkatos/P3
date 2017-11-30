@@ -7,7 +7,7 @@ class Gameboard:
         self.gameboard = config
         self.nbr_total_item = nbr_total_item
 
-    def display(self):
+    def display_text(self):
         """Fonction qui affiche le gameboard"""
         for liste in self.gameboard:
             for element in liste:
