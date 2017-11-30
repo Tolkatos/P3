@@ -6,6 +6,7 @@ from item import *
 from character import *
 from keeper import *
 
+
 class TextApplication:
 
     def __init__(self, config_file, nbr_total_item):
@@ -15,23 +16,24 @@ class TextApplication:
         i = 0
         while i < nbr_total_item:
             self.item_i = Item()
-            self.item_i.pos_x = self.item_i.random_position(self.level.gameboard)
+            self.item_i.pos_x = self.item_i.random_pos(self.level.gameboard)
             self.level.gameboard[self.item_i.pos_y][self.item_i.pos_x] = "I"
             i += 1
 
     def run(self):
         self.level.display_text()
-        #Nouvelle boucle pour relancer le jeu sur demande de l'utilisateu
         while self.character.check_item(self.keeper):
-            print("\n")
-            move = input("Déplacement : z (haut), s (bas), q (gauche), d (droite) \n")
+            print("Objet rammassé : ", self.character.nbr_item)
+            move = input("Déplacement : z/s/q/d \n")
             self.character.move(move)
             self.character.check_item(self.keeper)
             self.level.display_text()
             print("\n")
-            print("Nombre d'objet : ", self.character.nbr_item)
 
 
+def main():
+    play = TextApplication('config.json', 3)
+    play.run()
 
-play = TextApplication('config.json', 3)
-play.run()
+if __name__ == "__main__":
+    main()

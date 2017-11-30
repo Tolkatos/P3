@@ -1,5 +1,6 @@
 import json
 
+
 class Gameboard:
     def __init__(self, config_file, nbr_total_item):
         with open(config_file, 'r') as file:
@@ -8,8 +9,8 @@ class Gameboard:
         self.nbr_total_item = nbr_total_item
 
     def display_text(self):
-        """Fonction qui affiche le gameboard"""
+        """Methode gère l'affichage text"""
         for liste in self.gameboard:
             for element in liste:
-                print(element, end = "")
+                print(element, end="")
             print("")
