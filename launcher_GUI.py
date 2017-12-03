@@ -9,6 +9,7 @@ class GUIApplication:
     def __init__(self, config_file, nbr_total_item):
         pygame.init()
         self.window = pygame.display.set_mode((480, 480))
+        pygame.display.set_caption("P3 : labyrinthe")
         self.level = Gameboard(config_file, nbr_total_item)
         self.character = Character(self.level)
         self.keeper = Keeper()
@@ -21,32 +22,32 @@ class GUIApplication:
 
     def event_keyboard(self):
         for event in pygame.event.get():
-            if event == pygame.KEYDOWN:
+            if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_UP:
-                    self.character.move("z", self.level)
+                    return "z"
                 if event.key == pygame.K_DOWN:
-                    self.character.move("s", self.level)
+                    return "s"
                 if event.key == pygame.K_RIGHT:
-                    self.character.move("d", self.level)
+                    return "d"
                 if event.key == pygame.K_LEFT:
-                    self.character.move("q", self.level)
+                    return "q"
 
     def display_GUI(self, img):
         y = 0
         x = 0
         while y <= 14:
             while x <= 14:
-                if self.level.gameboard[y][x] == 0:
+                if self.level.gameboard[x][y] == 0:
                     self.window.blit(img[0], (y * 32, x * 32))
-                if self.level.gameboard[y][x] == 1:
+                if self.level.gameboard[x][y] == 1:
                     self.window.blit(img[1], (y * 32, x * 32))
-                if self.level.gameboard[y][x] == "M":
+                if self.level.gameboard[x][y] == "M":
                     self.window.blit(img[0], (y * 32, x * 32))
                     self.window.blit(img["M"], (y * 32, x * 32))
-                if self.level.gameboard[y][x] == "G":
+                if self.level.gameboard[x][y] == "G":
                     self.window.blit(img[0], (y * 32, x *32))
                     self.window.blit(img["G"], (y * 32, x * 32))
-                if self.level.gameboard[y][x] == "I":
+                if self.level.gameboard[x][y] == "I":
                     self.window.blit(img[0], (y * 32, x * 32))
                     self.window.blit(img["I"], (y * 32, x * 32))
                 x += 1
@@ -57,7 +58,8 @@ class GUIApplication:
     def run(self, img):
         self.display_GUI(img)
         while self.character.check_item(self.keeper):
-            self.event_keyboard()
+            move = self.event_keyboard()
+            self.character.move(move)
             self.character.check_item(self.keeper)
             self.display_GUI(img)
 
