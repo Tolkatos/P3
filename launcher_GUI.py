@@ -56,24 +56,26 @@ class GUIApplication:
         pygame.display.flip()
 
     def run(self, img):
-        self.display_GUI(img)
         while self.character.check_item(self.keeper):
             move = self.event_keyboard()
             self.character.move(move)
             self.character.check_item(self.keeper)
             self.display_GUI(img)
 
-
 def main():
-    play = GUIApplication('config.json', 3)
-    img = {
-    "M" : pygame.image.load("img/character.png").convert_alpha(),
-    "G" : pygame.image.load("img/keeper.png").convert_alpha(),
-    "I" : pygame.image.load("img/item.png").convert_alpha(),
-    1 : pygame.image.load("img/wall.png").convert_alpha(),
-    0 : pygame.image.load("img/floor.png").convert_alpha()
-    }
-    play.run(img)
+    continuer = 1
+    while continuer:
+        play = GUIApplication('config.json', 3)
+        img = {
+        "M" : pygame.image.load("img/character.png").convert_alpha(),
+        "G" : pygame.image.load("img/keeper.png").convert_alpha(),
+        "I" : pygame.image.load("img/item.png").convert_alpha(),
+        1 : pygame.image.load("img/wall.png").convert_alpha(),
+        0 : pygame.image.load("img/floor.png").convert_alpha()
+        }
+        play.run(img)
+        if play.level.nbr_total_item == play.character.nbr_item:
+            continuer = 0
 
 if __name__ == "__main__":
     main()
