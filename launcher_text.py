@@ -20,14 +20,21 @@ class TextApplication:
             self.level.gameboard[self.item_i.pos_y][self.item_i.pos_x] = "I"
             i += 1
 
+    def display_text(self):
+        """Methode gère l'affichage text"""
+        for liste in self.level.gameboard:
+            for element in liste:
+                print(element, end="")
+            print("")
+
     def run(self):
-        self.level.display_text()
+        self.display_text()
         while self.character.check_item(self.keeper):
             print("Objet rammassé : ", self.character.nbr_item)
             move = input("Déplacement : z/s/q/d \n")
             self.character.move(move)
             self.character.check_item(self.keeper)
-            self.level.display_text()
+            self.display_text()
             print("\n")
 
 
