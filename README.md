@@ -1,14 +1,27 @@
 # Mini-jeux labyrinthe 2D
-## DA Python / Projet 3
+## Installation
+##### Téléchargement :
+* Télécharger le fichier : https://github.com/Tolkatos/P3/archive/master.zip
+* Ou cloner le repository :
+  >git clone https://github.com/Tolkatos/P3.git && cd P3/
 
-* Trouvez toutes les potions de force avant d'affronter le monstre pour pouvoir vous échapper.
-* Utilisez les flèches directionnels pour vous déplacer.
+##### Créer un environnement virtuel:
+* Linux :
+  >virtualenv -p python3 env && source env/bin/activate
 
-* Pour lancer le jeu, executez launcher_GUI.py
-  * Nécessite python3 et pygame
+* Mac :
+  >python3 -m venv
 
-* Vous pouvez modifier la structure du labyrinthe en éditant le fichier config.json
-  * 0 = passage
-  * 1 = mur
-  * "M" = personnage
-  * "G" = gardien
+##### Installer les modules nécessaire au fonctionnement du programme :
+* >pip install -r requirements.txt
+
+##### Executer le fichier launcher_GUI.py pour lancer le jeu :
+* Linux / Mac :
+    >python3 launcher_GUI.py
+
+* Windows :
+    >python launcher_GUI.py
+
+## Gameplay
+* Le déplacement ce fait avec les flèches directionnelles.
+* Vous devez récuperer les 3 objets avant de vous présentez devant le gardien pour terminer le jeu.
