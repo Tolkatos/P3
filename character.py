@@ -80,3 +80,6 @@ class Character:
                 else:
                     print("Defaite")
                     return False
+            return True
+        else:
+            return True
