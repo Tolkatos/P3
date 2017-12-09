@@ -6,14 +6,12 @@
   >git clone https://github.com/Tolkatos/P3.git && cd P3/
 
 ##### Créer un environnement virtuel:
-* Linux :
+* Linux / Windows:
   >virtualenv -p python3 env && source env/bin/activate
 
 * Mac :
   >python3 -m venv env && source env/bin/activate
 
-* Windows :
-  >
 
 ##### Installer les modules nécessaire au fonctionnement du programme :
 * >pip install -r requirements.txt
