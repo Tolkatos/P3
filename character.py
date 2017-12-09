@@ -1,5 +1,11 @@
 class Character:
+    """Class qui représente le personnage
 
+    Attribut(4):
+    pos_y : ligne
+    pos_x : sprite
+    nbr_item : nombre d'objet rammassé
+    level : objet de la class Gameboard"""
     def __init__(self, level):
         self.pos_y = 0
         self.pos_x = 0
@@ -74,6 +80,3 @@ class Character:
                 else:
                     print("Defaite")
                     return False
-            return True
-        else:
-            return True

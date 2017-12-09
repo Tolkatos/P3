@@ -14,16 +14,12 @@ class Gameboard:
         self.gameboard = config
         self.nbr_total_item = nbr_total_item
 
-    def is_a_wall(self, x, y):
+    def is_a_wall(self, pos_x, pos_y):
         """Méthode qui vérifie si les coordonnées pointent sur un mur"""
-        if self.gameboard[x][y] == 1:
+        if self.gameboard[pos_x][pos_y] == 1:
             return True
-        else:
-            return False
 
-    def is_a_floor(self, x, y):
+    def is_a_floor(self, pos_x, pos_y):
         """Méthode qui vérifie si les coordonnées pointent sur un passage"""
-        if self.gameboard[x][y] == 0:
+        if self.gameboard[pos_x][pos_y] == 0:
             return True
-        else:
-            return False
