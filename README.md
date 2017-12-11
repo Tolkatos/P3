@@ -1,5 +1,5 @@
 # Mini-jeux labyrinthe 2D
-## Installation
+## Installation (nécessite Python3)
 ##### Téléchargement :
 * Téléchargez et dézippez le fichier : https://github.com/Tolkatos/P3/archive/master.zip
 * Ou cloner le repository :
