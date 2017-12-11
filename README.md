@@ -1,16 +1,20 @@
 # Mini-jeux labyrinthe 2D
 ## Installation
 ##### Téléchargement :
-* Télécharger le fichier : https://github.com/Tolkatos/P3/archive/master.zip
+* Téléchargez et dézippez le fichier : https://github.com/Tolkatos/P3/archive/master.zip
 * Ou cloner le repository :
   >git clone https://github.com/Tolkatos/P3.git && cd P3/
 
 ##### Créer un environnement virtuel:
-* Linux / Windows:
+* Linux :
   >virtualenv -p python3 env && source env/bin/activate
 
 * Mac :
   >python3 -m venv env && source env/bin/activate
+
+* Windows :
+  >virtualenv env
+  >env/Scripts/activate
 
 
 ##### Installer les modules nécessaire au fonctionnement du programme :
