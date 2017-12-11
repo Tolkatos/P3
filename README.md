@@ -14,7 +14,8 @@
 
 * Windows :
   >virtualenv env
-  env/Scripts/activate
+  
+  >env/Scripts/activate
 
 
 ##### Installer les modules nécessaire au fonctionnement du programme :
