@@ -6,6 +6,7 @@ class Character:
     pos_x : sprite
     nbr_item : nombre d'objet rammassé
     level : objet de la class Gameboard"""
+
     def __init__(self, level):
         self.pos_y = 0
         self.pos_x = 0
@@ -17,6 +18,7 @@ class Character:
 
         Paramètre(1):
         move_input : contient l'entrée utilisateur"""
+
         if move_input == "z":
             if self.pos_y - 1 >= 0:
                 if self.level.gameboard[self.pos_y - 1][self.pos_x] != 1:
@@ -72,6 +74,7 @@ class Character:
 
         Paramètre(1):
         keeper = objet de la class Keeper"""
+        
         if self.pos_y == keeper.pos_y:
             if self.pos_x == keeper.pos_x:
                 if self.level.nbr_total_item == self.nbr_item:
