@@ -22,9 +22,9 @@ class GUIApplication:
         pygame.init()
         self.window = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_WIDTH))
         pygame.display.set_caption("P3 : labyrinthe")
-        font = pygame.font.Font(None, 44)
-        self.text_victoire = font.render("Victoire !", 1, (255, 255, 255))
-        self.text_defeat = font.render("Défaite !", 1, (255, 255, 255))
+        font = pygame.font.Font(None, 64)
+        self.text_victoire = font.render("Victoire !", 1, (0, 255, 0))
+        self.text_defeat = font.render("Défaite !", 1, (255, 0, 0))
         self.level = Gameboard(config_file, nbr_total_item)
         self.character = Character(self.level)
         self.keeper = Keeper()
@@ -47,10 +47,6 @@ class GUIApplication:
                     return "d"
                 if event.key == pygame.K_LEFT:
                     return "q"
-                if event.key == pygame.K_RETURN:
-                    return True
-                if event.key == pygame.K_ESCAPE:
-                    return False
             elif event.type == pygame.QUIT: sys.exit()
 
     def display_GUI(self, img):
@@ -102,7 +98,15 @@ def main():
         }
         play.run(img)
         if play.level.nbr_total_item == play.character.nbr_item:
-            continuer = play.event_keyboard()
+            play.window.blit(play.text_victoire, (160, 240))
+            pygame.display.flip()
+            pygame.time.delay(2000)
+            continuer = False
+        else:
+            play.window.blit(play.text_defeat, (160, 240))
+            pygame.display.flip()
+            pygame.time.delay(2000)
+            continuer = True
 
 
 
