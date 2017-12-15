@@ -13,7 +13,7 @@
 * Windows :
   >py -3 -m venv env
   
-  >env/Scripts/activate
+  >env\Scripts\activate
 
 
 ##### Installer les modules nécessaire au fonctionnement du programme :
